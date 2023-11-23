@@ -11,6 +11,7 @@ label1.pack(pady=20)
 entry=Entry(root,width=30,borderwidth=5)
 entry.pack(padx=20,pady=20)
 
+#Generating the password using different characters
 def password_generator():
     entry1.delete(0,END)
     len=entry.get()
@@ -31,6 +32,7 @@ mybutton.pack()
 entry1=Entry(root,width=30,borderwidth=5)
 entry1.pack(padx=20,pady=20)
 
+#Function to copy the text to the clipboard
 def copy_text():
     text_to_copy=entry1.get()
     pyperclip.copy(text_to_copy)

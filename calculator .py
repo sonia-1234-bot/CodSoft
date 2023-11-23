@@ -5,15 +5,17 @@ root.title("Calculator")
 e=Entry(root,width=35,borderwidth=5,font=16,bg="beige")
 e.grid(row=0,column=0,columnspan=3,padx=20,pady=20)
 
-
+#Function to consider the numbers entered
 def button_insert(num):
     current=e.get()
     e.delete(0,END) 
     e.insert(0,str(current)+str(num))
-    
+
+#Function to clear the entered data    
 def button_clr():
     e.delete(0,END)    
 
+#Funtion to get the first number entered and the operator entered
 def button_func(operator):
     first_number=e.get()
     global f_num
@@ -23,7 +25,7 @@ def button_func(operator):
     e.insert(0,str(first_number)+op) 
     e.delete(0,END) 
  
-
+#Funtion for permormimg operation based on the operator selected 
 def button_equal():
     second_number=e.get()
     e.delete(0,END)
@@ -38,7 +40,7 @@ def button_equal():
     elif op=="%":
         e.insert(0,f_num%float(second_number))                
 
-
+#Buttons for the numbers, operators, equating and clearing the data
 button1=Button(root,font=14,text="1",padx=40,pady=40,bg="beige",command=lambda:button_insert(1))
 button2=Button(root,font=14,text="2",padx=40,pady=40,bg="beige",command=lambda:button_insert(2))
 button3=Button(root,font=14,text="3",padx=40,pady=40,bg="beige",command=lambda:button_insert(3))
@@ -58,7 +60,7 @@ button_mod=Button(root,font=16,text="%",padx=40,pady=40,bg="lightgreen",command=
 button_eql=Button(root,font=20,text="=", padx=100,pady=40,bg="lightblue",command=button_equal)
 button_clear=Button(root,font=20,text="CLR",padx=32,pady=40,bg="lightblue",command=button_clr)
 
-
+#Adjusting the position of the buttons
 button1.grid(row=1,column=0)
 button2.grid(row=1,column=1)
 button3.grid(row=1,column=2)
